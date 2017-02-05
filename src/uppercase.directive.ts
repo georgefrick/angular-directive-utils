@@ -13,7 +13,7 @@ export class UppercaseDirective  {
     constructor( private ctrl: NgControl ) {}
 
     public onInputChange() {
-        let newValue = this.ctrl.value.toUpperCase();
+        let newValue = this.ctrl.value.toLowerCase();
         this.ctrl.reset(newValue);
     }
 

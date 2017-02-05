@@ -3,12 +3,12 @@ import {NgControl} from "@angular/forms";
 
 
 @Directive({
-    selector: "[uppercase]",
+    selector: "[lowercase]",
     host: {
         "(input)": "onInputChange()"
     }
 })
-export class UppercaseDirective  {
+export class LowercaseDirective  {
 
     constructor( private ctrl: NgControl ) {}
 

@@ -26,7 +26,7 @@ export class InputMaskModel {
      * @returns {number}
      */
     public get placeHolderCount(): number {
-        return (this.originalPattern.match(/\$/g) || []).length;
+        return (this.originalPattern.match(/\*/g) || []).length;
     }
 
     /**
@@ -36,7 +36,7 @@ export class InputMaskModel {
      * @returns {string[]}
      */
     public extractDividers(originalPattern: string): Array<string> {
-        let dividers = originalPattern.replace(/\$/g, "").split("");
+        let dividers = originalPattern.replace(/\*/g, "").split("");
         //  dividers.push("_");
         return dividers;
     }
@@ -63,7 +63,7 @@ export class InputMaskModel {
     public get maskedPattern(): string {
         let generatedPattern = this.originalPattern;
         for (let patternIndex = 0; patternIndex < this.placeHolderCount; patternIndex++) {
-            generatedPattern = generatedPattern.replace(/\$/, "{" + patternIndex + "}");
+            generatedPattern = generatedPattern.replace(/\*/, "{" + patternIndex + "}");
         }
         return generatedPattern;
     }
@@ -110,7 +110,7 @@ export class InputMaskModel {
         if (!inputValue || this.unmaskValue(inputValue) === "") {
             return "";
         } else {
-            return inputValue.replace(/[$_]/g, "");
+            return inputValue.replace(/[*_]/g, "");
         }
     }
 
