@@ -1,6 +1,6 @@
 {
   "name": "angular-directive-utils",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Angular[2] directive collection.",
   "main": "index.js",
   "scripts": {
